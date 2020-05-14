@@ -28,7 +28,7 @@ We leveraged SciBERT from *SciBERT: A Pretrained Language Model for Scientific T
 The model was trained in a pipeline-multitask setting, consisting of trigger classification and relation classification. For trigger classification, each token is associated with a label indicating its trigger type or protein. If a token is neither a trigger nor a protein, it is labeled as *None*. The output is obtained by feeding the contextualized representation to a feed-forward network  <img src="https://render.githubusercontent.com/render/math?math=\hat{y}^{tri}_{i} = \textrm{FFN}^{tri}(h_{i})"> for the *i*-th token. In the relation classification stage, all possible combinations of triggers and arguments are gathered, labelled with their corresponding argument roles. We concatenate the representations of the head and tail embeddings and feed it to a another feed-forward network <img src="https://render.githubusercontent.com/render/math?math=\hat{y}^{rel}_{i} = \textrm{FFN}^{rel}(h_{i})">. We use cross entropy for both tasks as follows,
 
 <img src="https://render.githubusercontent.com/render/math?math=L^{t} = - \frac{1}{N^{t}}\sum_{i=1}^{N^{t}}  y^{t}_{i} \cdot \log\hat{y}^{t}_{i}, ">  
-where *t* denotes different tasks, and <img src="https://render.githubusercontent.com/render/math?math=N^{t}"> denotes the number of instances for task *t*. The model was optimized with BERTAdam by minimizing the sum of the two losses.
+where t denotes different tasks, and <img src="https://render.githubusercontent.com/render/math?math=N^{t}"> denotes the number of instances for task t. The model was optimized with BERTAdam by minimizing the sum of the two losses.
 
 
 
