@@ -8,14 +8,17 @@
 ## Introduction
 With the increasing concern about the COVID-19 pandemic, researchers have been putting much effort in providing useful insights into the [COVID-19 Open Research Dataset Challenge (CORD-19)](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge/). This repo contains two types of NLP annotations on the CORD-19 dataset, using the capability we developed under the NIH R01 project ["Evidence Extraction for the Molecular Interaction Literature" (LM012592)](https://projectreporter.nih.gov/project_info_description.cfm?aid=9543557&icde=41363289&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC&pball=), Including
 
-* __Biomedical discourse tagging__: The discourse analysis results can be found [here](https://drive.google.com/file/d/1vZyL-V7JOgygVGwVorJu-pFFEMbi9Biv/view?usp=sharing).
+* __Scientific discourse tagging__: The discourse analysis results can be found [here](https://drive.google.com/file/d/1vZyL-V7JOgygVGwVorJu-pFFEMbi9Biv/view?usp=sharing).
 * __Biomedical event extraction__: The extracted events for the PMC proportion can be found [here](https://drive.google.com/file/d/1FXN2QRBoFzQmLwQztUhULm8WVKxyRwu3/view?usp=sharing).
 
 
 ## Description
 We provide more details about how do we generate these NLP annotations and some benchmark performances of these annotations.
 
-#### Biomedical discourse tagging
+#### Scientific discourse tagging
+We leverage our [scientific discourse tagging tool](https://github.com/jacklxc/ScientificDiscourseTagging) to tag clauses from CORD-19 with their rhetorical role. We first parse each paragraph into clauses using [Stanford CoreNLP](https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK) and tag each clause using our scientific discourse tagger with *goal, fact, result, hypothesis, method, problem, implication and none*. The details can be found in this [pre-print](https://arxiv.org/abs/1909.04758), which will be updated with the latest version soon.
+
+Our scientific discourse tagger 
 
 #### Biomedical event extraction 
 
