@@ -41,7 +41,7 @@ where t denotes different tasks, and <img src="https://render.githubusercontent.
 
 * Scientific discourse tagging
 
-Our scientific discourse tagger achieves SOTA performance of 0.843 weighted F1 score as the [previous SOTA](https://arxiv.org/abs/1702.05398) has 0.774 weighted F1 on the test set SciDT dataset (will be released soon). For detailed comparison, please refer to [our pre-print](https://arxiv.org/abs/1909.04758).
+Our scientific discourse tagger achieves SOTA performance of **0.843 weighted F1** score as the [previous SOTA](https://arxiv.org/abs/1702.05398) has 0.774 weighted F1 on the test set SciDT dataset (will be released soon). For detailed comparison, please refer to [our pre-print](https://arxiv.org/abs/1909.04758).
 
 * Biomedical event extraction 
 
