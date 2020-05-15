@@ -41,7 +41,21 @@ where t denotes different tasks, and N denotes the number of instances. The mode
 
 * Scientific discourse tagging
 
+| Model        | Test Set F1 |
+| ------------- |-------------:|
+|   [Previous SOTA](https://arxiv.org/abs/1702.05398)   |   0.774  |
+|   Our Model   | **0.843** |
+
 Our scientific discourse tagger achieves SOTA performance of **0.843 weighted F1** score as the [previous SOTA](https://arxiv.org/abs/1702.05398) has 0.774 weighted F1 on the test set SciDT dataset (will be released soon). For detailed comparison, please refer to [our pre-print](https://arxiv.org/abs/1909.04758).
+
+We also provide our model performance on [CODA-19](https://github.com/windx0303/CODA-19) for reference.
+| Model        | Test Set Accuracy |
+| ------------- |-------------:|
+|   [CODA-19 Baseline](https://arxiv.org/pdf/2005.02367.pdf)   |   0.677  |
+|   Our Model, Zero-shot Prediction   | **0.761** |
+|   Our Model   | **0.885** |
+
+For zero-shot prediction, we directly used our model trained on SciDT dataset to predict on CODA-19 test set, and map each predicted SciDT label to CODA-19 labels.
 
 * Biomedical event extraction 
 
