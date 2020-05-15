@@ -18,7 +18,9 @@ We provide more details about how do we generate these NLP annotations and some 
 #### Scientific discourse tagging
 We leverage our [scientific discourse tagging tool](https://github.com/jacklxc/ScientificDiscourseTagging) to tag clauses from CORD-19 with their rhetorical role. We first parse each paragraph into clauses using [Stanford CoreNLP](https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK) and tag each clause using our scientific discourse tagger with *goal, fact, result, hypothesis, method, problem, implication and none*. The details can be found in this [pre-print](https://arxiv.org/abs/1909.04758), which will be updated with the latest version soon.
 
-Our scientific discourse tagger 
+Briefly, in an end-to-end fashion, our scientific discourse tagger takes the [SciBERT](https://github.com/allenai/scibert) embedding of each token and uses a novel LSTM-based attention mechanism to summarize token embeddings to clause embeddings. Then we use a BiLSTM-CRF to predict discourse tags based on clause embeddings.
+
+Under “abstract” and “body_text”, We add annotations in the format of `“clause_discourse_tags”=[{“clause”:“This is a clause 1", “discourse_tag”: “tag1"},{“clause”:“This is a clause 2", “discourse_tag”: “tag2"}]`.
 
 #### Biomedical event extraction 
 
@@ -37,7 +39,8 @@ where t denotes different tasks, and <img src="https://render.githubusercontent.
 
 ## Performance
 
-* Biomedical discourse tagging
+* Scientific discourse tagging
+Our scientific discourse tagger achieves SOTA performance of 0.843 weighted F1 score as the [previous SOTA](https://arxiv.org/abs/1702.05398) has 0.774 weighted F1 on the test set SciDT dataset (will be released soon). For detailed comparison, please refer to [our pre-print](https://arxiv.org/abs/1909.04758).
 
 * Biomedical event extraction 
 
