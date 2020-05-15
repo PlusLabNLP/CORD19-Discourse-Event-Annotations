@@ -8,21 +8,23 @@
 ## Introduction
 With the increasing concern about the COVID-19 pandemic, researchers have been putting much effort in providing useful insights into the [COVID-19 Open Research Dataset Challenge (CORD-19)](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge/). This repo contains two types of NLP annotations on the CORD-19 dataset, using the capability we developed under the NIH R01 project ["Evidence Extraction for the Molecular Interaction Literature" (LM012592)](https://projectreporter.nih.gov/project_info_description.cfm?aid=9543557&icde=41363289&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC&pball=), Including
 
-* __Scientific discourse tagging__: The discourse analysis results can be found [here](https://drive.google.com/file/d/1vZyL-V7JOgygVGwVorJu-pFFEMbi9Biv/view?usp=sharing).
-* __Biomedical event extraction__: The extracted events for the PMC proportion can be found [here](https://drive.google.com/file/d/1FXN2QRBoFzQmLwQztUhULm8WVKxyRwu3/view?usp=sharing).
+### Scientific discourse tagging 
+The discourse analysis results can be found [here](https://drive.google.com/file/d/1vZyL-V7JOgygVGwVorJu-pFFEMbi9Biv/view?usp=sharing).
+### Biomedical event extraction
+The extracted events for the PMC proportion can be found [here](https://drive.google.com/file/d/1FXN2QRBoFzQmLwQztUhULm8WVKxyRwu3/view?usp=sharing).
 
 
 ## Description
 We provide more details about how do we generate these NLP annotations and some benchmark performances of these annotations.
 
-#### Scientific discourse tagging
+### Scientific discourse tagging
 We leverage our [scientific discourse tagging tool](https://github.com/jacklxc/ScientificDiscourseTagging) to tag clauses from CORD-19 with their rhetorical role. We first parse each paragraph into clauses using [Stanford CoreNLP](https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK) and tag each clause using our scientific discourse tagger with *goal, fact, result, hypothesis, method, problem, implication and none*. The details can be found in this [pre-print](https://arxiv.org/abs/1909.04758), which will be updated with the latest version soon.
 
 Briefly, in an end-to-end fashion, our scientific discourse tagger takes the [SciBERT](https://github.com/allenai/scibert) embedding of each token and uses a novel LSTM-based attention mechanism to summarize token embeddings to clause embeddings. Then we use a BiLSTM-CRF to predict discourse tags based on clause embeddings.
 
 Under “abstract” and “body_text”, We add annotations in the format of `“clause_discourse_tags”=[{“clause”:“This is a clause 1", “discourse_tag”: “tag1"},{“clause”:“This is a clause 2", “discourse_tag”: “tag2"}]`.
 
-#### Biomedical event extraction 
+### Biomedical event extraction 
 
 We took reference from the pipeline described in  *Generalizing Biomedical Event Extraction (Bjorne et al. 2009)*, where the pipeline can be broken into 3 stages: trigger detection, edge detection and unmerging. 
 <p align="center"><img src="https://github.com/jbjorne/TEES/wiki/TEES-process.png"   style="margin:auto"></p>
@@ -39,7 +41,7 @@ where t denotes different tasks, and N denotes the number of instances. The mode
 
 ## Performance
 
-* Scientific discourse tagging
+### Scientific discourse tagging
 
 | Model        | Test Set F1 |
 | ------------- |-------------:|
@@ -57,7 +59,7 @@ We also provide our model performance on [CODA-19](https://github.com/windx0303/
 
 For zero-shot prediction, we directly used our model trained on SciDT dataset to predict on CODA-19 test set, and map each predicted SciDT label to CODA-19 labels.
 
-* Biomedical event extraction 
+### Biomedical event extraction 
 
 Currently, this repo contains only the fine-tuned SciBERT Baseline on the GENIA dataset, whose performance is on par with the previous SOTA result. The best performing model with UMLS (a large biomedical knowledge grapah) and GNN incorporation will soon be released.
 
