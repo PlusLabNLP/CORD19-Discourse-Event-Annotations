@@ -18,7 +18,7 @@ The extracted events for the PMC proportion can be found [here](https://drive.go
 We provide more details about how do we generate these NLP annotations and some benchmark performances of these annotations.
 
 ### Scientific discourse tagging
-We leverage our [scientific discourse tagging tool](https://github.com/jacklxc/ScientificDiscourseTagging) to tag clauses from CORD-19 with their rhetorical role. We first parse each paragraph into clauses using [Stanford CoreNLP](https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK) and tag each clause using our scientific discourse tagger with *goal, fact, result, hypothesis, method, problem, implication and none*. The details can be found in this [pre-print](https://arxiv.org/abs/1909.04758), which will be updated with the latest version soon.
+We leverage our [scientific discourse tagging tool](https://github.com/jacklxc/ScientificDiscourseTagging) to tag clauses from CORD-19 with their rhetorical role. We first parse each paragraph into clauses using [Stanford CoreNLP](https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK) and tag each clause using our scientific discourse tagger with __*goal, fact, result, hypothesis, method, problem, implication and none*__. The details can be found in this [pre-print](https://arxiv.org/abs/1909.04758), which will be updated with the latest version soon.
 
 Briefly, in an end-to-end fashion, our scientific discourse tagger takes the [SciBERT](https://github.com/allenai/scibert) embedding of each token and uses a novel LSTM-based attention mechanism to summarize token embeddings to clause embeddings. Then we use a BiLSTM-CRF to predict discourse tags based on clause embeddings.
 
