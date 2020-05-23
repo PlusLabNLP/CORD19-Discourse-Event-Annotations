@@ -43,10 +43,10 @@ where t denotes different tasks, and N denotes the number of instances. The mode
 
 ### Scientific discourse tagging
 
-| Model        | Test Set F1 |
+| Model        | Test Set Accuracy |
 | ------------- |-------------:|
-|   [Previous SOTA](https://arxiv.org/abs/1702.05398)   |   0.774  |
-|   Our Model   | **0.843** |
+|   [Previous SOTA](https://arxiv.org/abs/1702.05398)   |   0.791  |
+|   Our Model   | **0.841** |
 
 Our scientific discourse tagger achieves SOTA performance of **0.843 weighted F1** score as the [previous SOTA](https://arxiv.org/abs/1702.05398) has 0.774 weighted F1 on the test set SciDT dataset (will be released soon). For detailed comparison, please refer to [our pre-print](https://arxiv.org/abs/1909.04758).
 
