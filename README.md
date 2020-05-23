@@ -53,7 +53,7 @@ Our scientific discourse tagger achieves SOTA performance of **0.843 weighted F1
 We also provide our model performance on [CODA-19](https://github.com/windx0303/CODA-19) -- a scientific discourse tagging dataset on COVID-19 publications for reference.
 | Model        | Test Set Accuracy |
 | ------------- |-------------:|
-|   [CODA-19 Baseline](https://arxiv.org/pdf/2005.02367.pdf)   |   0.677  |
+|   [CODA-19 Baseline (SciBERT)](https://arxiv.org/pdf/2005.02367.pdf)   |   0.749  |
 |   Our Model, Zero-shot Prediction   | **0.761** |
 |   Our Model, Train on CODA-19   | **0.885** |
 
